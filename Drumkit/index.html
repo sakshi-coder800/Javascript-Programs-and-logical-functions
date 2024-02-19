@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drum Kits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            background-color: pink;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+            letter-spacing: 4px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+        }
+
+        .btn {
+            padding: 30px 50px;
+            background-color: white;
+            border: none;
+            margin: 10px;
+            font-size: 30px;
+            min-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            background-image: url("images/tom.png");
+            background-size: cover;
+            color: white;
+            font-family: cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            text-transform: capitalize;
+        }
+
+        .btn:hover {
+            color: pink;
+        }
+
+        .btn:active {
+            background-size: 105%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Drum Kits <i class="fas fa-drum"></i></h1>
+    <div class="container"></div>
+    <script>
+        const kits = ["Crash", "Kick", "Snare", "Tom"];
+        const container = document.querySelector(".container");
+        kits.forEach((item) => {
+            // console.log(item)
+            const btnElem = document.createElement("button")
+            btnElem.innerText = item;
+            btnElem.classList.add("btn")
+            // "url(images/" + kit + ".png)";
+            btnElem.style.backgroundImage = `url(images/${item}.png)`
+
+            // create audio element 
+            const audioElem = document.createElement("audio");
+            audioElem.src = "sounds/" + item + ".mp3"
+            btnElem.appendChild(audioElem)
+            // console.log(btnElem)
+            btnElem.addEventListener("click", () => {
+                // alert("audio play")
+                audioElem.play();
+            })
+            container.appendChild(btnElem);
+        })
+    </script>
+</body>
+
+</html>
