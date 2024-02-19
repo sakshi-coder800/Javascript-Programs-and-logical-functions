@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Card Effeact2.html</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 30rem;
+            height: 30rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container img {
+            width: 100%;
+            transition: all 0.5s;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 25%;
+            width: 100%;
+            /* background-color: #000; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            transition: all 0.5s;
+            background: rgb(23, 23, 23);
+            transform: translateY(100%);
+
+        }
+
+        .container:hover .content {
+            transform: translateY(0%);
+        }
+
+        .container:hover img {
+            transform: translateY(-25%);
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <section class="container">
+        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" height="100%" width="" />
+        <article class="content">
+            <h1>Card Title 🔥</h1>
+            <h4>Content Goes Here 🥂</h4>
+        </article>
+    </section>
+</body>
+
+</html>
