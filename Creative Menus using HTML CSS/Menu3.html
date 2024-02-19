@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Effect 3rd </title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            background: #000;
+        }
+
+        ul {
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul li a {
+            color: #fff;
+            font-size: 2rem;
+            text-decoration: none;
+            padding: 0.4rem 1rem;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.5s;
+            text-transform: uppercase;
+        }
+
+        .list-items::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            /* background-color: red; */
+            border-right: 3px solid #fff;
+            border-top: 3px solid #fff;
+            top: -10px;
+            right: -10px;
+            transition: all .5s linear;
+            opacity: 0;
+
+        }
+
+        .list-items:hover:before {
+            opacity: 1;
+            top: -6px;
+            right: -6px;
+        }
+
+        .list-items::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            /* background-color: red; */
+            /* border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff; */
+            border: 3px solid white;
+            border-width: 0px 0px 3px 3px;
+            bottom: -10px;
+            left: -10px;
+            transition: all .5s linear;
+            opacity: 0;
+        }
+
+        .list-items:hover:after {
+            opacity: 1;
+            bottom: -6px;
+            left: -6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li><a href="" class="list-items">Home</a></li>
+            <li><a href="" class="list-items">About</a></li>
+            <li><a href="" class="list-items">Services</a></li>
+            <li><a href="" class="list-items">Team</a></li>
+            <li><a href="" class="list-items">Contact</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

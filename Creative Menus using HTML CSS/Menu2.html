@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu 2 Design</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* padding-top: 40px; */
+            font-family: sans-serif;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .list-items {
+            position: relative;
+            /* display: block; */
+            padding: 15px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #000;
+            font-size: 22px;
+            font-weight: bold;
+            transition: 1s;
+        }
+
+        .list-items::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background-color: red; */
+            border-top: 2px solid red;
+            border-bottom: 2px solid red;
+            opacity: 0;
+            transition: 1s;
+            transform: scaleY(2);
+        }
+
+        .list-items:hover:before {
+            transform: scaleY(1.2);
+            opacity: 1;
+        }
+
+        .list-items::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            background-color: red;
+            transform: scale(0);
+            color: #fff;
+            transition: 1s;
+        }
+
+        .list-items:hover::after {
+            transform: scale(1);
+        }
+
+        .list-items:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li><a class="list-items active" href="">Home</a></li>
+            <li><a class="list-items" href="">About</a></li>
+            <li><a class="list-items" href="">Services</a></li>
+            <li><a class="list-items" href="">Team</a></li>
+            <li><a class="list-items" href="">Contact</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
